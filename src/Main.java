@@ -31,9 +31,20 @@ public class Main {
 
     }
     public static double getUserInput(){
-        Scanner scanner = new Scanner( System.in);
-        System.out.println("Enter a Number");
-        double userInput = Double.parseDouble(scanner.nextLine());
+         Scanner scanner = new Scanner( System.in);
+         System.out.println("Enter a Number");
+         double userInput = 0;
+         while (true) {
+            System.out.println("Type a double-type number:");
+            try {
+                userInput = Double.parseDouble(scanner.nextLine());
+                break; // will only get to here if input was a double
+            } catch (NumberFormatException ignore) {
+                System.out.println("Invalid input");
+            }
+        }
+
+
         return userInput;
 
     }
